@@ -8,27 +8,26 @@
 #
 
 library(shiny)
+library(tidyverse)
+library(ggplot2)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
 
     # Application title
-    titlePanel("Old Faithful Geyser Data"),
-
-    # Sidebar with a slider input for number of bins 
+    titlePanel("PS06-shiny"),
+    
     sidebarLayout(
-        sidebarPanel(
-            sliderInput("bins",
-                        "Number of bins:",
-                        min = 1,
-                        max = 50,
-                        value = 30)
+      sidebarPanel(
+        "Some words yeah"
+      ),
+      mainPanel(
+        tabsetPanel(
+          tabPanel("About"),
+          tabPanel("Plots"),
+          tabPanel("Tables"),
         ),
-
-        # Show a plot of the generated distribution
-        mainPanel(
-           plotOutput("distPlot")
-        )
+      )
     )
 )
 
