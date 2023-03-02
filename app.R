@@ -1,11 +1,3 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
 
 library(shiny)
 library(tidyverse)
@@ -14,7 +6,7 @@ library(ggplot2)
 
 data <- read_delim("UAH-lower-troposphere-long.csv.bz2")
 
-# Define UI for application that draws a histogram
+# ui 
 ui <- fluidPage(
 
     # Application title
@@ -55,7 +47,7 @@ ui <- fluidPage(
     )))
     
 
-# Define server logic required to draw a histogram.
+# server logic!
 server <- function(input, output) {
 
   output$dataTable <- renderDataTable({
@@ -91,9 +83,4 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server)
 
 
-## to do
-
-## make year selector actually work..........................
-
-## publish to shiny, put link in readme
 
